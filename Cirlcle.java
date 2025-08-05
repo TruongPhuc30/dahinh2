@@ -1,63 +1,84 @@
+/**
+ * Lớp Circle đại diện cho hình tròn, kế thừa từ Shape.
+ */
 public class Circle extends Shape {
-    protected Point center;
     protected double radius;
+    protected Point center;
 
+    /**
+     * Khởi tạo hình tròn mặc định với bán kính 1 và tâm tại (0,0).
+     */
     public Circle() {
-        this.center = new Point(0, 0);
+        super();
         this.radius = 1.0;
+        this.center = new Point(0, 0);
     }
 
+    /**
+     * Khởi tạo hình tròn với tâm và bán kính cụ thể.
+     * @param center tọa độ tâm
+     * @param radius bán kính
+     */
     public Circle(Point center, double radius) {
+        super();
         this.center = center;
         this.radius = radius;
     }
 
+    /**
+     * Khởi tạo hình tròn đầy đủ thông tin.
+     * @param center tọa độ tâm
+     * @param radius bán kính
+     * @param color màu sắc
+     * @param filled trạng thái tô màu
+     */
     public Circle(Point center, double radius, String color, boolean filled) {
         super(color, filled);
         this.center = center;
         this.radius = radius;
     }
 
-    public Point getCenter() {
-        return center;
-    }
-
-    public void setCenter(Point center) {
-        this.center = center;
-    }
-
+    /**
+     * Lấy bán kính của hình tròn.
+     * @return bán kính
+     */
     public double getRadius() {
         return radius;
     }
 
+    /**
+     * Đặt bán kính mới cho hình tròn.
+     * @param radius bán kính mới
+     */
     public void setRadius(double radius) {
         this.radius = radius;
     }
 
+    /**
+     * Tính diện tích hình tròn.
+     * @return diện tích
+     */
     @Override
     public double getArea() {
         return Math.PI * radius * radius;
     }
 
+    /**
+     * Tính chu vi hình tròn.
+     * @return chu vi
+     */
     @Override
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
 
+    /**
+     * Trả về chuỗi mô tả hình tròn, bao gồm tâm, bán kính và thông tin cơ bản.
+     * @return chuỗi mô tả
+     */
     @Override
     public String toString() {
-        return "Circle[center=" + center + ", radius=" + radius + ",color=" + color + ",filled=" + filled + "]";
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Circle)) return false;
-        Circle other = (Circle) obj;
-        return center.equals(other.center) && radius == other.radius;
-    }
-
-    @Override
-    public int hashCode() {
-        return center.hashCode() + Double.hashCode(radius);
+        return "Circle[center=" + center + ",radius=" + radius +
+               ",color=" + color + ",filled=" + filled + "]";
     }
 }
