@@ -81,4 +81,15 @@ public class Circle extends Shape {
         return "Circle[center=" + center + ",radius=" + radius +
                ",color=" + color + ",filled=" + filled + "]";
     }
+    
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Circle other = (Circle) obj;
+    return Double.compare(radius, other.radius) == 0 &&
+           center.equals(other.center) &&
+           color.equals(other.color) &&
+           filled == other.filled;
+}
 }
