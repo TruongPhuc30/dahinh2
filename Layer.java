@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Lớp Layer quản lý danh sách các đối tượng Shape và xử lý thao tác trên chúng.
  */
 public class Layer {
-    private ArrayList<Shape> shapes;
+    private List<Shape> shapes;
 
     /**
      * Khởi tạo layer rỗng.
