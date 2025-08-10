@@ -150,6 +150,12 @@ public class Rectangle extends Shape {
                ",color=" + color + ",filled=" + filled + "]";
     }
 
+     /**
+     * So sánh hai đối tượng Rectangle có bằng nhau không.
+     *
+     * @param o đối tượng cần so sánh
+     * @return true nếu bằng nhau, false nếu không
+     */
      @Override
     public boolean equals(Object o) {
         if (this == o) return true;
