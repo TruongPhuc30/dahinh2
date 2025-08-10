@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Lớp Rectangle đại diện cho hình chữ nhật, kế thừa từ Shape.
  */
@@ -74,6 +76,24 @@ public class Rectangle extends Shape {
      */
     public void setLength(double length) {
         this.length = length;
+    }
+
+    /**
+     * Trả về tọa độ góc trên bên trái của hình chữ nhật.
+     *
+     * @return đối tượng {@code Point} đại diện cho góc trên bên trái
+     */
+    public Point getTopLeft() {
+        return topLeft;
+    }
+
+    /**
+     * Thiết lập tọa độ góc trên bên trái mới cho hình chữ nhật.
+     *
+     * @param topLeft đối tượng {@code Point} mới làm góc trên bên trái
+     */
+    public void setTopLeft(Point topLeft) {
+        this.topLeft = topLeft;
     }
 
     /**
