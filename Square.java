@@ -78,7 +78,8 @@ public class Square extends Rectangle {
     }
 
     /**
-     * Trả về chuỗi đại diện cho hình vuông, bao gồm thông tin vị trí, cạnh, màu sắc và trạng thái tô màu.
+     * Trả về chuỗi đại diện cho hình vuông, bao gồm thông tin vị trí, cạnh
+      , màu sắc và trạng thái tô màu.
      * @return chuỗi mô tả hình vuông
      */
     @Override
@@ -87,7 +88,7 @@ public class Square extends Rectangle {
                + ",color=" + color + ",filled=" + filled + "]";
     }
     
-     /**
+    /**
      * So sánh hai đối tượng Square có bằng nhau không.
      *
      * @param o đối tượng cần so sánh
@@ -95,12 +96,16 @@ public class Square extends Rectangle {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Square)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Square)) {
+            return false;
+        }
         Square other = (Square) o;
-        return Double.compare(getSide(), other.getSide()) == 0 &&
-                Objects.equals(color, other.color) &&
-                filled == other.filled;
+        return Double.compare(getSide(), other.getSide()) == 0 
+                && Objects.equals(color, other.color) 
+                && filled == other.filled;
     }
 
     /**
