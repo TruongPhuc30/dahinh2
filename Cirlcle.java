@@ -17,15 +17,24 @@ public class Circle extends Shape {
     }
 
     /**
-     * Khởi tạo hình tròn với tâm và bán kính cụ thể.
-     * @param center tọa độ tâm
+     * Khởi tạo hình tròn với bán kính cụ thể.
      * @param radius bán kính
      */
-    public Circle(Point center, double radius) {
+    public Circle(double radius) {
         super();
-        this.center = center;
+        this.center = new Point(0, 0);
         this.radius = radius;
     }
+
+    /**
+     * Khởi tạo hình tròn với bán, mau kính cụ thể.
+     * @param color mau
+     * @param radius bán kính
+     */
+     public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
+        this.center = new Point(0, 0);
+        this.radius = radius;
 
     /**
      * Khởi tạo hình tròn đầy đủ thông tin.
