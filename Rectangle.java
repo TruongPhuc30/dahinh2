@@ -43,13 +43,13 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    /**
-     * Khởi tạo hình chữ nhật đầy đủ thông tin.
-     * @param width chiều rộng
-     * @param length chiều dài
-     * @param color màu sắc
-     * @param filled trạng thái tô màu
-     */
+     /**
+      * Khởi tạo hình chữ nhật đầy đủ thông tin.
+      * @param width chiều rộng
+      * @param length chiều dài
+      * @param color màu sắc
+      * @param filled trạng thái tô màu
+      */
      public Rectangle( double width, double length, String color, boolean filled) {
         super(color, filled);
         this.topLeft =  new Point(0, 0);
@@ -146,8 +146,8 @@ public class Rectangle extends Shape {
      */
     @Override
     public String toString() {
-        return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length +
-               ",color=" + color + ",filled=" + filled + "]";
+        return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length 
+            +",color=" + color + ",filled=" + filled + "]";
     }
 
      /**
@@ -158,16 +158,20 @@ public class Rectangle extends Shape {
      */
      @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Rectangle)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Rectangle)) {
+            return false;
+        }
         Rectangle other = (Rectangle) o;
-        return Double.compare(width, other.width) == 0 &&
-                Double.compare(length, other.length) == 0 &&
-                Objects.equals(color, other.color) &&
-                filled == other.filled;
+        return Double.compare(width, other.width) == 0 
+                && Double.compare(length, other.length) == 0 
+                && Objects.equals(color, other.color) 
+                && filled == other.filled;
     }
 
-     /**
+    /**
      * Tạo mã băm cho đối tượng Rectangle.
      *
      * @return mã băm
