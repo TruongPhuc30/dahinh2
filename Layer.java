@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Interator;
 
 /**
  * Lớp Layer quản lý danh sách các đối tượng Shape và xử lý thao tác trên chúng.
@@ -25,8 +26,13 @@ public class Layer {
     /**
      * Xóa tất cả hình tròn khỏi layer.
      */
-    public void removeCircles() {
-        shapes.removeIf(shape -> shape instanceof Circle);
+   public void removeCircles() {
+        Iterator<Shape> iterator = shapes.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() instanceof Circle) {
+                iterator.remove();
+            }
+        }
     }
 
     /**
