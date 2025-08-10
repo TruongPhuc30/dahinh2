@@ -147,7 +147,7 @@ public class Rectangle extends Shape {
     @Override
     public String toString() {
         return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length 
-            +",color=" + color + ",filled=" + filled + "]";
+             + ",color=" + color + ",filled=" + filled + "]";
     }
 
      /**
