@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Lớp Circle đại diện cho hình tròn, kế thừa từ Shape.
  */
@@ -52,6 +54,24 @@ public class Circle extends Shape {
      */
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+    
+    /**
+     * Trả về tọa độ tâm của hình tròn.
+     *
+     * @return đối tượng {@code Point} đại diện cho tâm hình tròn
+     */
+    public Point getCenter() {
+        return center;
+    }
+
+    /**
+     * Thiết lập tọa độ tâm mới cho hình tròn.
+     *
+     * @param center đối tượng {@code Point} mới làm tâm hình tròn
+     */
+    public void setCenter(Point center) {
+        this.center = center;
     }
 
     /**
