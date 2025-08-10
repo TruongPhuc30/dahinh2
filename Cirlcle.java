@@ -35,7 +35,7 @@ public class Circle extends Shape {
         super(color, filled);
         this.center = new Point(0, 0);
         this.radius = radius;
-
+     }
     /**
      * Khởi tạo hình tròn đầy đủ thông tin.
      * @param center tọa độ tâm
@@ -116,9 +116,9 @@ public boolean equals(Object obj) {
     if (this == obj) return true;
     if (obj == null || getClass() != obj.getClass()) return false;
     Circle other = (Circle) obj;
-    return Double.compare(radius, other.radius) == 0 &&
-           center.equals(other.center) &&
-           color.equals(other.color) &&
-           filled == other.filled;
+   return Double.compare(radius, other.radius) == 0 &&
+       Objects.equals(center, other.center) &&
+       Objects.equals(color, other.color) &&
+       filled == other.filled;
 }
 }
