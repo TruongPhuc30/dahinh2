@@ -52,7 +52,7 @@ public class Layer {
      * @return chuỗi mô tả
      */
     public String getInfo() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("Layer of crazy shapes:\n");
         for (Shape shape : shapes) {
             sb.append(shape.toString()).append("\n");
         }
