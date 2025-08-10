@@ -26,16 +26,17 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    /**
-     * Khởi tạo hình tròn với bán, mau kính cụ thể.
-     * @param color mau
-     * @param radius bán kính
-     */
+     /**
+      * Khởi tạo hình tròn với bán, mau kính cụ thể.
+      * @param color mau
+      * @param radius bán kính
+      */
      public Circle(double radius, String color, boolean filled) {
         super(color, filled);
         this.center = new Point(0, 0);
         this.radius = radius;
      }
+    
     /**
      * Khởi tạo hình tròn đầy đủ thông tin.
      * @param center tọa độ tâm
@@ -107,18 +108,22 @@ public class Circle extends Shape {
      */
     @Override
     public String toString() {
-        return "Circle[center=" + center + ",radius=" + radius +
-               ",color=" + color + ",filled=" + filled + "]";
+        return "Circle[center=" + center + ",radius=" + radius 
+            +",color=" + color + ",filled=" + filled + "]";
     }
     
     @Override
 public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null || getClass() != obj.getClass()) return false;
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
     Circle other = (Circle) obj;
-   return Double.compare(radius, other.radius) == 0 &&
-       Objects.equals(center, other.center) &&
-       Objects.equals(color, other.color) &&
-       filled == other.filled;
+   return Double.compare(radius, other.radius) == 0 
+       && Objects.equals(center, other.center) 
+       && Objects.equals(color, other.color) 
+       && filled == other.filled;
 }
 }
