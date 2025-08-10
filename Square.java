@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Lớp Square đại diện cho hình vuông, là lớp con của Rectangle.
  * Đảm bảo rằng chiều rộng và chiều dài luôn bằng nhau.
