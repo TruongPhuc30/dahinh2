@@ -86,4 +86,30 @@ public class Square extends Rectangle {
         return "Square[topLeft=" + topLeft + ",side=" + getSide()
                + ",color=" + color + ",filled=" + filled + "]";
     }
+    
+     /**
+     * So sánh hai đối tượng Square có bằng nhau không.
+     *
+     * @param o đối tượng cần so sánh
+     * @return true nếu bằng nhau, false nếu không
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Square)) return false;
+        Square other = (Square) o;
+        return Double.compare(getSide(), other.getSide()) == 0 &&
+                Objects.equals(color, other.color) &&
+                filled == other.filled;
+    }
+
+    /**
+     * Tạo mã băm cho đối tượng Square.
+     *
+     * @return mã băm
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSide(), color, filled);
+    }
 }
