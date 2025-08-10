@@ -19,6 +19,18 @@ public class Rectangle extends Shape {
     }
 
     /**
+     * Khởi tạo hình chữ nhật với kích thước cụ thể.
+     * @param width chiều rộng
+     * @param length chiều dài
+     */
+    public Rectangle(double width, double length) {
+        super();
+        this.topLeft =  new Point(0, 0);
+        this.width = width;
+        this.length = length;
+    }
+
+    /**
      * Khởi tạo hình chữ nhật với vị trí, kích thước cụ thể.
      * @param topLeft tọa độ góc trái trên
      * @param width chiều rộng
@@ -27,6 +39,20 @@ public class Rectangle extends Shape {
     public Rectangle(Point topLeft, double width, double length) {
         super();
         this.topLeft = topLeft;
+        this.width = width;
+        this.length = length;
+    }
+
+    /**
+     * Khởi tạo hình chữ nhật đầy đủ thông tin.
+     * @param width chiều rộng
+     * @param length chiều dài
+     * @param color màu sắc
+     * @param filled trạng thái tô màu
+     */
+     public Rectangle( double width, double length, String color, boolean filled) {
+        super(color, filled);
+        this.topLeft =  new Point(0, 0);
         this.width = width;
         this.length = length;
     }
@@ -122,5 +148,26 @@ public class Rectangle extends Shape {
     public String toString() {
         return "Rectangle[topLeft=" + topLeft + ",width=" + width + ",length=" + length +
                ",color=" + color + ",filled=" + filled + "]";
+    }
+
+     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Rectangle)) return false;
+        Rectangle other = (Rectangle) o;
+        return Double.compare(width, other.width) == 0 &&
+                Double.compare(length, other.length) == 0 &&
+                Objects.equals(color, other.color) &&
+                filled == other.filled;
+    }
+
+     /**
+     * Tạo mã băm cho đối tượng Rectangle.
+     *
+     * @return mã băm
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, length, color, filled);
     }
 }
